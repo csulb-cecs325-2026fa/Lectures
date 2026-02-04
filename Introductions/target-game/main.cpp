@@ -19,10 +19,16 @@ int main() {
         if (missedBy <= 1.0) {
             std::cout << "You hit the target!" << std::endl;
             hitTarget = true;
+
+
+
+
+            
         } else if (distance < targetDistance) {
             std::cout << "You were short by " << missedBy << "m. Try again!" << std::endl;
         } else {
             std::cout << "You were long by " << missedBy << "m. Try again!" << std::endl;
         }
     }
+    return 0;
 }

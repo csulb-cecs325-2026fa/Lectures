@@ -22,9 +22,25 @@ int main() {
     //      Write the function "myKidsWillWatch". My kids will only watch films that are less than 20 years old,
     //          rated G or PG, and less than 2 hours long.
     //
+
+
+
+    // Will the language stop us from accidentally mixing facts from two different films?
+    std::string frozen {"Frozen"};
+    printFilm(frozen, dogManYear, dogManDuration, dogManRating); // Is this allowed?
+                                                                 // Wouldn't it be nice if the language could "tie"
+                                                                 // together the dogMan facts as separate from
+                                                                 // Frozen facts?
+
+
+
     // What if we decide a film requires more information?
-    // Do we really want to copy and paste all these parameters across dozens of functions?
-    // What if we want to change one of the parameter types for all those functions?
+    //      How much work is it to add "domesticEarnings" to printFilm? And what if there are dozens of other
+    //          functions that work on film parameters?
+
+    //      What if we want to change one of the parameter types for all those functions?
+
+
 
     // We are stressing over the DETAILS of what a film is, rather than deal with
     // the abstract thought of a Film as a type of data. This code will be very difficult

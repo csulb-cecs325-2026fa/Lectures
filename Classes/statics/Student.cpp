@@ -6,7 +6,7 @@
 
 // Initialize the static m_nextStudentId with its starting value.
 // We DO NOT repeat the static keyword.
-int Student::m_nextStudentId = 1;
+int Student::m_nextStudentId {1};
 
 
 // We can only refer to m_nextStudentId in any Student functions, because it

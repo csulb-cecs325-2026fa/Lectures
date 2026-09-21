@@ -5,7 +5,9 @@
 #include "Film.h"
 
 Film::Film(const std::string &title, int releaseYear, int duration, const std::string &rating)
-    : m_title(title) {
+    : m_title{title}
+{
+    // Enforce the invariant conditions, and set reasonable defaults if they are violated.
     if (releaseYear > 0) {
         m_releaseYear = releaseYear;
     }
@@ -17,7 +19,7 @@ Film::Film(const std::string &title, int releaseYear, int duration, const std::s
         m_duration = duration;
     }
     else {
-        duration = 60;
+        m_duration = 60;
     }
 
     if (rating == "G" || rating == "PG" || rating == "PG-13" || rating == "R" ||
@@ -27,6 +29,10 @@ Film::Film(const std::string &title, int releaseYear, int duration, const std::s
     else {
         m_rating = "PG";
     }
+}
+
+bool Film::isFeatureLength() {
+    return m_duration >= 40;
 }
 
 const std::string & Film::getTitle() {
@@ -41,7 +47,7 @@ int Film::getDuration() {
     return m_duration;
 }
 
-const std::string & Film::getRating() {
+const std::string& Film::getRating() {
     return m_rating;
 }
 

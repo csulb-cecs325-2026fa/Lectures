@@ -62,6 +62,16 @@ public:
     // It's up to us to determine the return type. Ask yourself: if we add two complex numbers, what do we get back?
     // Another Complex!
     Complex operator+(const Complex& rhs) const;
+
+
+
+
+
+
+
+
+
+
     Complex operator-(const Complex& rhs) const;
     Complex operator*(const Complex& rhs) const;
 
@@ -79,6 +89,19 @@ public:
     Complex& operator+=(const Complex& rhs);
     Complex& operator-=(const Complex& rhs);
     Complex& operator*=(const Complex& rhs);
+
+
+
+
+    bool operator<(const Complex& rhs) const;
+
+    bool operator==(const Complex& rhs) const;
+
+
+
+
+
+
 };
 
 

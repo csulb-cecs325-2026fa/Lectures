@@ -4,10 +4,13 @@
 
 #include "Complex.h"
 
+#include <cmath>
+
 const Complex Complex::I {0, 1};
 
 Complex::Complex(double real, double imaginary)
-    : m_real(real), m_imaginary(imaginary) {
+    : m_real{real}, m_imaginary{imaginary}
+{
 }
 
 double Complex::getReal() const {
@@ -66,8 +69,8 @@ std::ostream &operator<<(std::ostream &lhs, const Complex &rhs) {
 
 
 Complex& Complex::operator+=(const Complex &rhs) {
-    m_real += rhs.m_real;
-    m_imaginary += rhs.m_imaginary;
+    this->m_real += rhs.m_real;
+    this->m_imaginary += rhs.m_imaginary;
     return *this;
 }
 
@@ -81,4 +84,14 @@ Complex & Complex::operator*=(const Complex &rhs) {
     m_real = m_real * rhs.m_real - m_imaginary * rhs.m_imaginary;
     m_imaginary = m_real * rhs.m_imaginary + m_imaginary * rhs.m_real;
     return *this;
+}
+
+bool Complex::operator<(const Complex &rhs) const {
+    double magLhs {sqrt(m_real * m_real + m_imaginary * m_imaginary)};
+    double magRhs {sqrt(rhs.m_real * rhs.m_real + rhs.m_imaginary * rhs.m_imaginary)};
+    return (magLhs < magRhs);
+}
+
+bool Complex::operator==(const Complex &rhs) const {
+    return m_real == rhs.m_real && m_imaginary == rhs.m_imaginary;
 }

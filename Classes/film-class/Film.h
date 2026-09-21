@@ -21,6 +21,8 @@ public:
     // Someone can create a film with a title, release year, duration, and rating.
 
     // METHODS: what can we do with a Film?
+    bool isFeatureLength();
+
     // Accessors: we can retrieve individual fields of a Film, if that might be
     // helpful for the public to know.
     const std::string& getTitle();

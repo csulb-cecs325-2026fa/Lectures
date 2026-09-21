@@ -4,7 +4,7 @@ int main() {
     Complex a {}; // Calls the parameter-less "default" constructor. a = 0 + 0i.
     Complex b {1, 2}; // Calls the two-double constructor. b = 1 + 2i.
     Complex c {b}; // Calls the copy constructor. c = 1 + 2i.
-    Complex &r = b; // r is a reference to b.
+    Complex &r {b}; // r is a reference to b.
 
     r.setReal(100);
 

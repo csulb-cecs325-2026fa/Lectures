@@ -66,7 +66,7 @@ int main() {
     printCard(aceOfSpades);
     std::cout << std::endl;
 
-    Card queenOfHearts {3, 12};
+    Card queenOfHearts {-3, 99999};
     // The { } will assign a value to each of the struct's fields, in the order
     // they are declared.
     printCard(queenOfHearts);
@@ -80,8 +80,8 @@ int main() {
         std::getline(std::cin, temp);
 
         // Generate a random suit and kind.
-        int randomSuit = suits(engine);
-        int randomKind = kinds(engine);
+        int randomSuit {suits(engine)};
+        int randomKind {kinds(engine)};
 
         // Construct a new Card variable using the given suit and kind.
         Card yourCard{randomSuit, randomKind};

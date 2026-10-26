@@ -30,6 +30,7 @@ int main() {
         total += value;
         ++count;
     }
+    std::cout << total << " " << count << std::endl;
 
     // Reaching the end is normal. Other input failures are errors.
     if (input.bad() || !input.eof()) {

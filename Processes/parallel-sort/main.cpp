@@ -43,7 +43,7 @@ int main() {
 
 
     // Don't let the program terminate until the second thread is also done.
-    t2.join();
+    //t2.join();
     // join(): wait for the thread to terminate before continuing.
 
     return 0;

@@ -4,13 +4,13 @@
 #include <sys/wait.h>
 
 // This program uses curl to download a file, then continues once the download is complete.
-int main()
+int main(int argc, char* argv[])
 {
     std::cout << "Starting curl" << std::endl;
     // Download a file with curl, then do something with it.
     int cid {fork()};
     if (cid == 0) {
-            std::cout << "Starting download..." << std::endl;
+        std::cout << "Starting download..." << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(10));
         // Child process. Run curl.
         execl("/bin/curl",
@@ -18,7 +18,7 @@ int main()
             "-L",
             "-o",
             "demo.cpp",
-            "https://adrive.google.com/uc?export=download&id=17vxURsbI0ubvgERu9vejsaTkTooIOhCS",
+            "https://drive.google.com/uc?export=download&id=17vxURsbI0ubvgERu9vejsaTkTooIOhCS",
             static_cast<char*>(nullptr));
     }
     else {

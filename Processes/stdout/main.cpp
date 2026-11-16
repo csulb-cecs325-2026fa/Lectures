@@ -18,7 +18,7 @@ int main()
         // child process.
         // This is a C function to open a file, and get back a "file descriptor" -- a unique integer ID
         // to utilize the file.
-        int outputFile = open("demo_output.txt", O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+        int outputFile {open("demo_output.txt", O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR)};
         // dup2: a system call to replace a process's standard input/output streams
         // with a file.
         dup2(outputFile, STDOUT_FILENO); // replace standard out with the outputFile.
